@@ -4,8 +4,9 @@ if (phy_speed_y < 10){
 	phy_speed_y += room0.gravity;
 }
 
-if (phy_speed_y > 4){
-	image_index = 7;
+if (phy_speed_y > 1){
+	sprite_index = spr_player_jump;
+	image_index = 6;
 	image_speed = 0;
 }
 else
@@ -48,7 +49,10 @@ if (keyboard_check_pressed(vk_up) &&
 	sprite_index = spr_player_jump;
 	
 	phy_speed_y = (keyboard_check_pressed(vk_up)) * -7;	
+	
+	image_speed = image_speed + phy_speed_y;
 }
+
 else
 	if (place_meeting(phy_position_x,phy_position_y, obj_ground) &&
 	    (phy_speed_x = 0 && phy_speed_y = 0))

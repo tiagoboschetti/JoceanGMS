@@ -3,5 +3,7 @@ if (keyboard_check_pressed(vk_up) &&
 	phy_speed_y = 0){	
 	sprite_index = spr_player_jump;
 	
-	phy_speed_y = (keyboard_check_pressed(vk_up)) * -7;	
-}	
+	phy_speed_y = (keyboard_check_pressed(vk_up)) * -7;
+	
+	image_speed = image_speed + phy_speed_y;
+}
